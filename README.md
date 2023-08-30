@@ -3,6 +3,41 @@
 ## Overview
 This repository contains a simple tool that translates English sentences to Hinglish. Hinglish is a hybrid language that combines Hindi and English, often used in informal communication. This tool allows you to keep specific English words in your sentences while translating the rest to Hinglish.
 
+## Code Explanation
+Import Libraries:
+We import the necessary libraries from the Transformers library. This includes MarianTokenizer and MarianMTModel.
+
+Load Pretrained Model and Tokenizer:
+We load a pre-trained model and tokenizer for English to Hindi translation. The model used here is "Helsinki-NLP/opus-mt-en-hi".
+
+Define English Words to Keep:
+We define a list of English words that we want to keep in English when translating to Hinglish. These words won't be translated to Hindi.
+
+Define the Translation Function:
+The english_to_hindi_with_selection function takes an English text as input and translates it to Hinglish.
+
+Tokenization and Translation:
+Inside the translation function, the input English text is split into words.
+We initialize an empty list to store the translated words.
+
+For each word in the input:
+If the word (in lowercase) is in the list of English words to keep, we add it to the list of translated words as is.
+
+If the word is not in the list, we proceed to translate it to Hindi:
+We tokenize the word.
+We use the pre-trained model to generate a Hindi translation for the word.
+The translation is decoded and added to the list of translated words.
+
+Reconstruct the Text:
+The translated words are joined together to reconstruct the Hinglish output sentence.
+
+Input Sentences:
+We provide a list of English sentences that we want to translate to Hinglish.
+
+Translation Loop:
+For each sentence in the list of input sentences, we call the english_to_hindi_with_selection function to translate it to Hinglish.
+The Hinglish output is printed for each sentence.
+
 ## Usage of Transformers
 
 Architecture Overview:
